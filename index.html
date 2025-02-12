@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zephara Digital Agency</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    :root {
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  --text-color: #333;
+  --background-color: #f4f4f4;
+  --white: #ffffff;
+  --gray: #777777;
+  --dark-gray: #333333;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header Styles */
+header {
+  background-color: var(--white);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+}
+
+.logo-img {
+  height: 40px;
+  width: auto;
+}
+
+.desktop-nav {
+  display: none;
+}
+
+.nav-link {
+  color: var(--text-color);
+  text-decoration: none;
+  margin-left: 20px;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--primary-color);
+}
+
+.cta-button {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: var(--secondary-color);
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  padding: 20px 0;
+}
+
+.mobile-nav.active {
+  display: flex;
+}
+
+/* Hero Section Styles */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--white);
+  overflow: hidden;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-title {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+.hero-cta {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 0;
+}
+
+/* Services Section Styles */
+.services {
+  padding: 80px 0;
+  background-color: var(--white);
+}
+
+.section-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--gray);
+  margin-bottom: 40px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.service-card {
+  background-color: var(--white);
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+.service-icon {
+  font-size: 48px;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+.service-title {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.service-description {
+  color: var(--gray);
+}
+
+/* Portfolio Section Styles */
+.portfolio {
+  padding: 80px 0;
+  background-color: var(--background-color);
+}
+
+.portfolio-filters {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.filter-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  margin: 0 10px;
+  padding: 5px 10px;
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+.filter-button.active,
+.filter-button:hover {
+  color: var(--primary-color);
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.portfolio-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.portfolio-image {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.portfolio-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+  opacity: 1;
+}
+
+.portfolio-item:hover .portfolio-image {
+  transform: scale(1.1);
+}
+
+.portfolio-title {
+  color: var(--white);
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.portfolio-link {
+  color: var(--white);
+  font-size: 24px;
+  background-color: var(--primary-color);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.portfolio-link:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Contact Section Styles */
+.contact {
+  padding: 80px 0;
+  background-color: var(--white);
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--gray);
+  border-radius: 5px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.submit-button {
+  background-color: var(--primary-color);
+  color: var(--white);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: var(--secondary-color);
+}
+
+.submit-icon {
+  margin-left: 10px;
+}
+
+/* Footer Styles */
+.footer {
+  background-color: var(--dark-gray);
+  color: var(--white);
+  padding: 60px 0 20px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-logo-img {
+  height: 60px;
+  width: auto;
+  margin-bottom: 15px;
+}
+
+.footer-description {
+  color: var(--gray);
+}
+
+.footer-title {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.footer-menu,
+.footer-contact-info {
+  list-style: none;
+}
+
+.footer-link,
+.footer-contact-info li {
+  color: var(--gray);
+  text-decoration: none;
+  margin-bottom: 10px;
+  display: block;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: var(--primary-color);
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icon {
+  color: var(--white);
+  font-size: 20px;
+  transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+  color: var(--primary-color);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid var(--gray);
+}
+
+/* Responsive Styles */
+@media (min-width: 768px) {
+  .desktop-nav {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  .mobile-nav {
+    display: none !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+</head>
+<body>
+    <header id="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%D8%A7%D9%84%D9%84%D9%82%D9%88%D9%82%D9%88%20%D8%A7%D9%84%D8%AE%D8%A7%D8%B5%20%D8%A8%D9%8A-vJo86M43g5fQnrpa7P1WTHfFSnOR3n.png" alt="Zephara Logo" class="logo-img">
+                </a>
+                <nav class="desktop-nav">
+                    <a href="#" class="nav-link">الرئيسية</a>
+                    <a href="#services" class="nav-link">خدماتنا</a>
+                    <a href="#portfolio" class="nav-link">أعمالنا</a>
+                    <a href="#contact" class="nav-link">تواصل معنا</a>
+                </nav>
+                <a href="#contact" class="cta-button desktop-cta">احصل على عرض سعر</a>
+                <button id="menu-toggle" class="menu-toggle">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+            <nav id="mobile-nav" class="mobile-nav">
+                <a href="#" class="nav-link">الرئيسية</a>
+                <a href="#services" class="nav-link">خدماتنا</a>
+                <a href="#portfolio" class="nav-link">أعمالنا</a>
+                <a href="#contact" class="nav-link">تواصل معنا</a>
+                <a href="#contact" class="cta-button mobile-cta">احصل على عرض سعر</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">نحول أفكارك إلى فيديوهات إعلانية مذهلة</h1>
+                <p class="hero-subtitle">نقدم خدمات إنتاج فيديو احترافية تساعد علامتك التجارية على التألق</p>
+                <div class="hero-cta">
+                    <a href="#contact" class="cta-button primary">احصل على عرض سعر</a>
+                    <a href="#portfolio" class="cta-button secondary">
+                        <i data-lucide="play"></i>
+                        شاهد أعمالنا
+                    </a>
+                </div>
+            </div>
+            <div class="hero-overlay"></div>
+            <video class="hero-video" autoplay muted loop playsinline>
+                <source src="/video-production.mp4" type="video/mp4">
+            </video>
+        </section>
+
+        <section id="services" class="services">
+            <div class="container">
+                <h2 class="section-title">خدماتنا</h2>
+                <p class="section-subtitle">نقدم مجموعة متكاملة من خدمات إنتاج الفيديو لمساعدتك في إيصال رسالتك بشكل مؤثر</p>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <i data-lucide="video" class="service-icon"></i>
+                        <h3 class="service-title">إنتاج فيديوهات إعلانية</h3>
+                        <p class="service-description">نقدم خدمات إنتاج فيديو عالية الجودة تجمع بين الإبداع والاحترافية لإيصال رسالتك بشكل مؤثر.</p>
+                    </div>
+                    <div class="service-card">
+                        <i data-lucide="edit" class="service-icon"></i>
+                        <h3 class="service-title">مونتاج وتحرير فيديو</h3>
+                        <p class="service-description">نقوم بتحرير ومونتاج الفيديو باستخدام أحدث التقنيات لإنشاء محتوى جذاب ومميز.</p>
+                    </div>
+                    <div class="service-card">
+                        <i data-lucide="presentation" class="service-icon"></i>
+                        <h3 class="service-title">موشن جرافيك</h3>
+                        <p class="service-description">نصمم رسومات متحركة إبداعية تساعد في شرح منتجاتك وخدماتك بطريقة مبسطة وجذابة.</p>
+                    </div>
+                    <div class="service-card">
+                        <i data-lucide="award" class="service-icon"></i>
+                        <h3 class="service-title">تصوير احترافي</h3>
+                        <p class="service-description">نوفر خدمات تصوير احترافية باستخدام أحدث المعدات لضمان جودة عالية لمحتواك.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="portfolio">
+            <div class="container">
+                <h2 class="section-title">أعمالنا</h2>
+                <p class="section-subtitle">اكتشف مجموعة من أحدث أعمالنا في مجال إنتاج الفيديو والموشن جرافيك</p>
+                <div class="portfolio-filters">
+                    <button class="filter-button active" data-category="all">الكل</button>
+                    <button class="filter-button" data-category="commercial">إعلانات تجارية</button>
+                    <button class="filter-button" data-category="motion">موشن جرافيك</button>
+                    <button class="filter-button" data-category="marketing">فيديوهات تسويقية</button>
+                </div>
+                <div class="portfolio-grid">
+                    <div class="portfolio-item" data-category="commercial">
+                        <img src="/video-thumbnail-1.jpg" alt="إعلان تجاري - شركة التقنية" class="portfolio-image">
+                        <div class="portfolio-overlay">
+                            <h3 class="portfolio-title">إعلان تجاري - شركة التقنية</h3>
+                            <a href="#" class="portfolio-link">
+                                <i data-lucide="play" class="portfolio-icon"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="portfolio-item" data-category="motion">
+                        <img src="/video-thumbnail-2.jpg" alt="موشن جرافيك - خدمات طبية" class="portfolio-image">
+                        <div class="portfolio-overlay">
+                            <h3 class="portfolio-title">موشن جرافيك - خدمات طبية</h3>
+                            <a href="#" class="portfolio-link">
+                                <i data-lucide="play" class="portfolio-icon"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="portfolio-item" data-category="marketing">
+                        <img src="/video-thumbnail-3.jpg" alt="فيديو تسويقي - منتج جديد" class="portfolio-image">
+                        <div class="portfolio-overlay">
+                            <h3 class="portfolio-title">فيديو تسويقي - منتج جديد</h3>
+                            <a href="#" class="portfolio-link">
+                                <i data-lucide="play" class="portfolio-icon"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2 class="section-title">تواصل معنا</h2>
+                <p class="section-subtitle">هل لديك مشروع في ذهنك؟ دعنا نحوله إلى واقع</p>
+                <form id="contact-form" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">الاسم</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">البريد الإلكتروني</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">رقم الهاتف</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="project-type">نوع المشروع</label>
+                        <select id="project-type" name="project-type" required>
+                            <option value="">اختر نوع المشروع</option>
+                            <option value="commercial">إعلان تجاري</option>
+                            <option value="motion">موشن جرافيك</option>
+                            <option value="corporate">فيديو مؤسسي</option>
+                            <option value="social">محتوى منصات التواصل</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">تفاصيل المشروع</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">
+                        <span>إرسال الطلب</span>
+                        <i data-lucide="send" class="submit-icon"></i>
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ephara%20(3)-qklQ6gFWPhhwErJe5z0xVVTuLIL1dN.png" alt="Ephara Logo" class="footer-logo-img">
+                    <p class="footer-description">نحول أفكارك إلى فيديوهات إعلانية مذهلة تساعد في نمو عملك</p>
+                </div>
+                <div class="footer-links">
+                    <h4 class="footer-title">روابط سريعة</h4>
+                    <ul class="footer-menu">
+                        <li><a href="#" class="footer-link">الرئيسية</a></li>
+                        <li><a href="#services" class="footer-link">خدماتنا</a></li>
+                        <li><a href="#portfolio" class="footer-link">أعمالنا</a></li>
+                        <li><a href="#contact" class="footer-link">تواصل معنا</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4 class="footer-title">تواصل معنا</h4>
+                    <ul class="footer-contact-info">
+                        <li>البريد الإلكتروني: info@ephara.com</li>
+                        <li>الهاتف: +966 123 456 789</li>
+                        <li>العنوان: الرياض، المملكة العربية السعودية</li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4 class="footer-title">تابعنا</h4>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i data-lucide="facebook"></i></a>
+                        <a href="#" class="social-icon"><i data-lucide="twitter"></i></a>
+                        <a href="#" class="social-icon"><i data-lucide="instagram"></i></a>
+                        <a href="#" class="social-icon"><i data-lucide="youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> Zephara. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
